@@ -1,0 +1,90 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CCHS 2004 Batch Get Together</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    </head>
+
+    <body class="bg-dark">
+        <div class="container text-white my-5 mx-auto ">
+            <div class="row justify-content-center col">
+                <div class="col-md-8 border p-5 border-warning">
+                    <div class="email-template">
+                        <h3>Hi {{registrant_name}},</h3>
+                        <p>You have successfully registered for our " <span class="text-warning"><strong>CCHS SSC-04
+                                    Batch Get-Together</strong></span>"
+                            event!</p>
+                        <p>We warmly welcome you to our grand event. It's an opportunity for us to reminisce and create
+                            new memories.</p>
+                        <p>Here are the details of the event:</p>
+                        <ul>
+                            <li><strong>Place:</strong> <span class="text-warning">Foys Lake Water Kingdom</span></li>
+                            <li><strong>Date:</strong> <span class="text-warning">1st December 2023</span></li>
+                            <li><strong>Time:</strong> <span class="text-warning">9:00 AM</span></li>
+                        </ul>
+                        <div id="pdf">
+                            <h2 class="h3 my-3">Your Registration Details </h2>
+                            <table class="table table-dark border table-striped border-warning my-3">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td><span class="text-warning">{{registrant_name}}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td><span class="text-warning">{{email}}</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Restration ID</td>
+                                        <td><span class="text-warning">{{registrant_id}}</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Payment Method</td>
+                                        <td><span class="text-warning">{{payment_method}}</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Transaction ID</td>
+                                        <td><span class="text-warning">{{transaction_id}}</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Total Members</td>
+                                        <td><span class="text-warning">{{total_member}}</span></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>We will confirm your registration within 24 hours. You can check your confirmation status
+                            through our website.</p>
+                        <p>Looking forward to enjoying a memorable day with you!</p>
+                        <p>Warm regards,</p>
+                        <p> <span class="text-warning">Shaheen Parvez</span><br>Event Coordinator<br>CCHS SSC-04 Batch
+                        </p>
+                    </div>
+                    <!-- Include any additional Bootstrap components you need -->
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
