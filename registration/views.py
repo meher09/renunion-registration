@@ -55,7 +55,6 @@ def registration_success(request):
     registrant_id = request.session.get('registrant_id', 'Unknown ID')
     payment_method = request.session.get('payment_method', 'Not Specified')
     transaction_id = request.session.get('transaction_id', 'N/A')
-    total_member = request.session.get('total_member', 0)
     email = request.session.get('email', 'Not Known')
 
     # Construct the context dictionary
@@ -64,7 +63,6 @@ def registration_success(request):
         'registrant_id': registrant_id,
         'payment_method': payment_method,
         'transaction_id': transaction_id,
-        'total_member': total_member,
         'email': email,
     }
 
@@ -96,3 +94,7 @@ def check_approval_status(request):
         'status_message': status_message,
         'query': query
     })
+
+
+def home(request):
+    return render(request, 'home.html')

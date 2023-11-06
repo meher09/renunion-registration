@@ -3,31 +3,31 @@ from django import forms
 
 class RegistrationForm(forms.Form):
     full_name = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name'}))
     email = forms.EmailField(widget=forms.EmailInput(
-        attrs={'class': 'form-control'}))
+        attrs={'class': 'form-control', 'placeholder': 'email@email.com'}))
     facebook = forms.URLField(required=False, widget=forms.URLInput(
-        attrs={'class': 'form-control'}))
+        attrs={'class': 'form-control',  'placeholder': 'https://www.facebook.com/your-id'}))
     mobile = forms.CharField(max_length=20, widget=forms.TextInput(
-        attrs={'class': 'form-control'}))
+        attrs={'class': 'form-control', 'placeholder': '01XX-XXX-XX-XX'}))
     bloodgroup = forms.ChoiceField(choices=[
         ('O +ve', 'O +ve'), ('O -ve', 'O -ve'),
         ('A +ve', 'A +ve'), ('A -ve', 'A -ve'),
         ('B +ve', 'B +ve'), ('B -ve', 'B -ve')
     ], widget=forms.Select(attrs={'class': 'form-select'}))
     profession = forms.CharField(
-        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+        max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Teacher At Dhaka College'}))
     tshirt_size = forms.ChoiceField(choices=[
         ('S', 'S - Small'), ('M', 'M - Medium'), ('L', 'L - Large'),
         ('XL', 'XL - Extra Large'), ('XXL', 'XXL - Extra Extra Large'),
         ('XXXL', 'XXXL - Extra Extra Extra Large')
     ], widget=forms.Select(attrs={'class': 'form-select'}))
     spouse_check = forms.BooleanField(
-        required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))
+        required=False, label='Spouse', widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))
     child_checkbox = forms.BooleanField(
-        required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))
+        required=False, label='Children(Above 4 years Old)', widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))
     number_of_children = forms.IntegerField(
-        required=False, min_value=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
+        required=False, min_value=0, label='Number of Children(Above 4 years Old)', initial=0, widget=forms.NumberInput(attrs={'class': 'form-control'}))
     payment_method = forms.ChoiceField(choices=[
         ('bkash', 'Bkash'), ('nagad', 'Nagad'), ('handcash', 'Hand Cash')
     ], widget=forms.Select(attrs={'class': 'form-select'}))
